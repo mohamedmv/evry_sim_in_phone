@@ -36,22 +36,26 @@ class EvrySimInPhonePlugin: FlutterPlugin, MethodCallHandler {
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
 
 
-    if(call.method == "sim"){
+    if(call.method == "sim") {
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-        var sm: SubscriptionManager =   context.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE)  as SubscriptionManager
-        try{
-          var s : List<SubscriptionInfo>  = sm.activeSubscriptionInfoList
-          var r : String =""
-          for ( info :SubscriptionInfo in s ){
+        var sm: SubscriptionManager = context.getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager
+        try {
+          var s: List<SubscriptionInfo> = sm.activeSubscriptionInfoList
+          var r: String = ""
+          for (info: SubscriptionInfo in s) {
             r = r + info.carrierName + "::"
           }
           result.success(r)
 
-        }catch (ex: Exception){
+
+        } catch (ex: Exception) {
           result.success("$ex")
         }
-
       }
+      result.success("")
+
+
+    }
 
 
 
