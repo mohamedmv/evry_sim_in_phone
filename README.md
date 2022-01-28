@@ -19,7 +19,7 @@ change the minSDK in your build.gradle to 22
 this package need phone permition to handel that we recommend to use permission_handler:
       https://pub.dev/packages?q=permission_handler
 
-add the folowing line to your AndroidManifest.xml just before </manifest>
+add the folowing line to your AndroidManifest.xml
 ```Xml
         <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 ```
