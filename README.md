@@ -19,7 +19,10 @@ change the minSDK in your build.gradle to 22
 this package need phone permition to handel that we recommend to use permission_handler:
       https://pub.dev/packages?q=permission_handler
 
-
+add the folowing line to your AndroidManifest.xml just before </manifest>
+```Xml
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+```
 first you need to import permition handler and evry_sim_in_phone
  ```dart
  import import 'package:permission_handler/permission_handler.dart';
