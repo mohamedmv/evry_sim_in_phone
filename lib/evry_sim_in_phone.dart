@@ -19,7 +19,7 @@ class EvrySimInPhone {
     return version;
   }
 
-  Future<List<String>> initPlatformState() async {
+  Future<List<String>> getAllSims() async {
    String result ='';
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
